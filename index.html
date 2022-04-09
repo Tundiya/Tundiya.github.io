@@ -1,55 +1,156 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Spin-off of "Project: Blog"</title>
-    </head>
-    <body>
-    <style>
-        #table_of_contents{
-            background-color:yellow;
-        }
-        .post_header{
-            color:rgb(32, 122, 31);
-        }
-        .body_paragraph{
-            font-size: 16px;
-            font-family:"Arial";
-            color:rgb(28, 26, 181);
-            line-height: 1.5em;
-        }
-        .post_dates{
-            text-align: center;
-            background-color:rgb(247, 15, 247);
-            font-size:15px;
-            font-style:italic;
-        }
-        
-    </style>
-        
-        <h1>Ilya's blog-A-tron</h1>
 
-        <h3>Contents_du_table</h3>
-        <ul id="table_of_contents">
-            <li><a href="#drawing_animation_review">My review of the JavaScript drawing/animation module</a></li>
-            <li><a href ="#html_css_review">Thoughts on html and css</a></li>
-        </ul>
-        
-        <h2 class="post_header" id ="drawing_animation_review">My Review of the previous module on JavaScript drawing and animation.</h2>
-        <h6 class="post_dates">4/6/22</h6>
-        
-        <p class="body_paragraph">I have recently finished the first module of the programming course here on Khan Academy and would like to jot down some thoughts about it! First off I would say that it was wildly successful! Most of the concrete learning for a first time programmer really seemed to happen in the bonus material of each challange.Although, many times I found myself stuck the sheer act of sticking with it and figuring things out, either by hitting the documentation or other students comments, really made the most progress for me. Although the tutorials and talk throughs are great, I think for the purpose of more effectively commiting these concepts to memory the struggle of trying to figure things out and just simply trying things out is <strong>huge</strong>. JavaScript itself seems to be rather intuitive, I am sure it is designed that way! Getting a good grip on <em>for</em> loops and nested for loops is a huge help. There is an important thing I would like to point out that took me a little while to realize. When for loops were first taught in the course it did not click in for me that loops don't have to be set against array.length, they can in fact just be set to an arbitrary amount. So as to say that if I need a loop to run 40 times, which I ended up doing, you can just set i less than 40. DOES NOT NEED TO BE LESS THAN ARRAY.LENGTH. It was a huge moment for me when I finally figured out that I can just make a for loop to push as many random numbers into an array as I needed, for example in the make it rain project.</p>
-        
-        <h2 id="html_css_review">
-            Review of intro to HTML/CSS
-        </h2>
-        <h6 class="post_dates">
-            4/8/22
-        </h6>
-        
-        <p class="body_paragraph">The basic layout of the HTML page is very nicely structured. That is the first thing I noticed. This structure gives a very intuitive start to using the system. Secondly, the way that CSS feeds into it from a simple "style" function and works with a very straight forward heirarchy. Programming in general has me very excited because as one thing begins to click it really starts to bring together everything else that has been covered. I am looking forward to finishing this module and continueing this post through this weekend! yay me!
-        </p>
-        
-        
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <title><blog_attempt</title>
+    
+</head>
+
+<body>
+    <style>
+        body {
+            background-image: linear-gradient(to right, rgb(129, 203, 247), rgb(236, 236, 201))
+        }
+
+        #main-title {
+            background-color: rgb(188, 236, 124);
+            border: 2px solid black;
+            font-family: "Comic Sans MS", fantasy;
+            padding: 5px;
+            width: 270px;
+            position: relative;
+            float: left;
+            z-index: 2px;
+            border-radius: 20px;
+            top:30px;
+            text-shadow: 2px 2px black;
+            transform: rotate(-15deg);
+        }
+
+        #contents-table-title {
+            background-image: linear-gradient(to left, rgb(8, 255, 8), rgb(187, 255, 0));
+            border: 2px solid black;
+            font-family: "Comic Sans MS", fantasy;
+            padding: 15px;
+            width: 300px;
+            float: right;
+            position: relative;
+            top: 20px;
+            color:black;
+            font-size:20px;
+        }
+
+        #table-of-contents {
+            /*TODO*/                                        /*I really want to make this, if not all the titles, pop out almost like buttons */
+            background-color: rgb(151, 211, 181);
+            top:120px;
+            position:relative;
+            border:2px solid black;
+            padding:5px;
+            width:30%;
+            left:600px;
+            font-size:18px;
+            text-shadow:1px 1px black;
+
+        }
+        .table-content-words{
+            font-size:20px;
+            color:rgb(8, 15, 12)
+        }
+
+        .post-header {
+            color: white;
+            z-index: 2;
+            text-shadow: 2px 2px black;
+            text-align:left;
+            top:260px;
+            position:relative;
+            border:2px solid black;
+                                                  /* background is z=0, headers and paragraphs are z=1, and titles and float objects are z=2*/
+        }
+
+        .body-paragraph {
+            font-size: 16px;
+            font-family: "Arial";
+            color: rgb(28, 26, 181);
+            line-height: 1.5em;
+            position: relative;
+            top: 200px;
+            text-align:center;
+        }
+
+        .post-dates {
+            text-align:center;
+            background-color: rgb(238, 147, 238);
+            font-size: 15px;
+            font-style: italic;
+            position: relative;
+            top: 210px;
+            border:2px solid black;
+        }
+
+    </style>
+
+    <h1 id="main-title">Tundy's blog-A-tron</h1>
+
+    <h3 id="contents-table-title">Contents_du_table</h3>
+    <ul id="table-of-contents">
+        <li class="table-content-words"><a href="#drawing-animation-review">My review of the JavaScript drawing/animation module</a></li>
+        <li class="table-content-words"><a href="#html-css-review">Thoughts on html and css</a></li>
+        <li class="table-content-words"><a href="#rantings-ravings">Future rantings and ravings</a></li>
+    </ul>
+
+    <h2 class="post-header" id="drawing-animation-review">
+        JavaScript animation/drawing review
+    </h2>
+    <h6 class="post-dates">
+        4/6/22
+    </h6>
+
+    <p class="body-paragraph">
+        I have recently finished the first module of the programming course here on Khan Academy
+        and would like to jot down some thoughts about it! First off I would say that it was wildly successful! Most of
+        the concrete learning for a first time programmer really seemed to happen in the bonus material of each
+        challange.Although, many times I found myself stuck the sheer act of sticking with it and figuring things out,
+        either by hitting the documentation or other students comments, really made the most progress for me. Although
+        the tutorials and talk throughs are great, I think for the purpose of more effectively commiting these concepts
+        to memory the struggle of trying to figure things out and just simply trying things out is
+        <strong>huge</strong>. JavaScript itself seems to be rather intuitive, I am sure it is designed that way!
+        Getting a good grip on <em>for</em> loops and nested for loops is a huge help. There is an important thing I
+        would like to point out that took me a little while to realize. When for loops were first taught in the course
+        it did not click in for me that loops don't have to be set against array.length, they can in fact just be set to
+        an arbitrary amount. So as to say that if I need a loop to run 40 times, which I ended up doing, you can just
+        set i less than 40. DOES NOT NEED TO BE LESS THAN ARRAY.LENGTH. It was a huge moment for me when I finally
+        figured out that I can just make a for loop to push as many random numbers into an array as I needed, for
+        example in the make it rain project.
+    </p>
+
+    <h2 class="post-header" id="html-css-review-title">
+        Review of intro to HTML/CSS
+    </h2>
+    <h6 class="post-dates">
+        4/8/22
+    </h6>
+
+    <p class="body-paragraph">
+        The basic layout of the HTML page is very nicely structured. That is
+        the first thing I
+        noticed. This structure gives a very intuitive start to using the system. Secondly, the way that CSS feeds into
+        it from a simple "style" function and works with a very straight forward heirarchy. Programming in general has
+        me very excited because as one thing begins to click it really starts to bring together everything else that has
+        been covered. I am looking forward to finishing this module and continueing this post through this weekend! yay
+        me!
+    </p>
+
+    <h2 class="post-header" id="rantings-ravings">
+        Future rantings and ravings
+
+    </h2>
+    <h6 class="post-dates">sometimehere</h6>
+
+
+</body>
+
 </html>
