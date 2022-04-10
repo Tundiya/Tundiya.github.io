@@ -4,8 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <title><blog_attempt</title>
-    
+    <title>
+        <blog_attempt< /title>
+
 </head>
 
 <body>
@@ -24,9 +25,10 @@
             float: left;
             z-index: 2px;
             border-radius: 20px;
-            top:30px;
+            top: 30px;
             text-shadow: 2px 2px black;
             transform: rotate(-15deg);
+            color: white;
         }
 
         #contents-table-title {
@@ -38,37 +40,39 @@
             float: right;
             position: relative;
             top: 20px;
-            color:black;
-            font-size:20px;
+            color: black;
+            font-size: 20px;
         }
 
         #table-of-contents {
-            /*TODO*/                                        /*I really want to make this, if not all the titles, pop out almost like buttons */
+            /*TODO*/
+            /*I really want to make this, if not all the titles, pop out almost like buttons */
             background-color: rgb(151, 211, 181);
-            top:120px;
-            position:relative;
-            border:2px solid black;
-            padding:5px;
-            width:30%;
-            left:600px;
-            font-size:18px;
-            text-shadow:1px 1px black;
+            top: 120px;
+            position: relative;
+            border: 2px solid black;
+            padding: 5px;
+            width: 30%;
+            left: 600px;
+            font-size: 18px;
+            text-shadow: 1px 1px black;
 
         }
-        .table-content-words{
-            font-size:20px;
-            color:rgb(8, 15, 12)
+
+        .table-content-words {
+            font-size: 20px;
+            color: rgb(8, 15, 12)
         }
 
         .post-header {
             color: white;
             z-index: 2;
             text-shadow: 2px 2px black;
-            text-align:left;
-            top:260px;
-            position:relative;
-            border:2px solid black;
-                                                  /* background is z=0, headers and paragraphs are z=1, and titles and float objects are z=2*/
+            text-align: left;
+            top: 260px;
+            position: relative;
+            border: 2px solid black;
+            /* background is z=0, headers and paragraphs are z=1, and titles and float objects are z=2*/
         }
 
         .body-paragraph {
@@ -78,26 +82,32 @@
             line-height: 1.5em;
             position: relative;
             top: 200px;
-            text-align:center;
+            text-align: center;
         }
 
         .post-dates {
-            text-align:center;
+            text-align: center;
             background-color: rgb(238, 147, 238);
             font-size: 15px;
             font-style: italic;
             position: relative;
             top: 210px;
-            border:2px solid black;
+            border: 2px solid black;
         }
 
+        a:hover,
+        a:active,
+        a:focus {
+            background-color: blanchedalmond;
+        }
     </style>
 
     <h1 id="main-title">Tundy's blog-A-tron</h1>
 
     <h3 id="contents-table-title">Contents_du_table</h3>
     <ul id="table-of-contents">
-        <li class="table-content-words"><a href="#drawing-animation-review">My review of the JavaScript drawing/animation module</a></li>
+        <li class="table-content-words"><a href="#drawing-animation-review">My review of the JavaScript
+                drawing/animation module</a></li>
         <li class="table-content-words"><a href="#html-css-review">Thoughts on html and css</a></li>
         <li class="table-content-words"><a href="#rantings-ravings">Future rantings and ravings</a></li>
     </ul>
@@ -141,14 +151,34 @@
         it from a simple "style" function and works with a very straight forward heirarchy. Programming in general has
         me very excited because as one thing begins to click it really starts to bring together everything else that has
         been covered. I am looking forward to finishing this module and continueing this post through this weekend! yay
-        me!
+        me! OKAY i just done did er. Finished the module like a good turbonerd should in a few days. The lessons through
+        Khan academy are a pretty good intro into using HTML and CSS as far as I can tell. At the end they left with
+        with both the resources and knowledge on how to keep on progressing further, which I really appreciated. Along
+        the way I found W3schools which seems to be the ultamite CSS cheat sheet! FUCK YES. There remain many things
+        that I want to implement on this little blog yet, not to mention make it look better over time. For instance I
+        need to know how to make different pages, buttons, JS animations etc. That being said, in the next two or three
+        modules with Khan there is promise of this to come! So this blog I hope will continue to be my side project
+        while learning through those modules, because implementing that information into a real world application has
+        been so very impactful to helping me understand how things really look outside the Khan liveview library wizard.
+        For instance, just the process of getting my own code editor set up with a live view, from which I am currently
+        writing, linking that editor to a local github, that pulls from a live repository that actually hosts this blog
+        onto a live page is kinda fucking huge. Feels real good man. Like I said earlier I really want to keep working
+        on this, not only to keep my skillset expanding with HTML/CSS, even though it is really outside my area of
+        interest, but also to keep applying things I learn to it from where my interest really lies. In the future I
+        really don't want to be doing these posts through a code editor at all, if thats possible. I would prefer to log
+        in to my blog, make a fresh post from a nice clean UI that I have somehow built and have it update and post into
+        the HTML for me with the layout I have designed.(going to be better than this for reals++).It seems that with
+        the more I learn so far the more excited I get for the possible things ahead. I really have to try and pace
+        myself at this point, the excitment is getting out of hand and I don't want it to lead to burnout.
     </p>
 
-    <h2 class="post-header" id="rantings-ravings">
-        Future rantings and ravings
-
+    <h2 class="post-header" id="SQL: querying and managing data">
+        SQL:Querying and managing data
     </h2>
-    <h6 class="post-dates">sometimehere</h6>
+
+    <h6 class="post-dates">
+        sometimehere
+    </h6>
 
 
 </body>
