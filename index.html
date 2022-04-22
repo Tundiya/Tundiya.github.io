@@ -1,125 +1,135 @@
 <!DOCTYPE html>
 <html>
-
-
-<head>
-    <meta charset="utf-8">
-    <title><blog_attempt</title>
-
-</head>
-
-<body>
+    <head>
+        <meta charset="utf-8">
+        <title>Blog-0-tron</title>
+    </head>
     <style>
-        body {
-            background-image: linear-gradient(to right, rgb(129, 203, 247), rgb(236, 236, 201))
-        }
-
-        #main-title {
-            background-color: rgb(188, 236, 124);
-            border: 2px solid black;
-            font-family: "Comic Sans MS", fantasy;
-            padding: 5px;
-            width: 270px;
-            position: relative;
-            float: left;
-            z-index: 2;
-            border-radius: 20px;
-            top: 30px;
-            text-shadow: 2px 2px black;
-            transform: rotate(-15deg);
-            color: white;
-        }
-
-        #contents-table-title {
-            background-image: linear-gradient(to left, rgb(8, 255, 8), rgb(187, 255, 0));
-            border: 2px solid black;
-            font-family: "Comic Sans MS", fantasy;
-            padding: 15px;
-            width: 300px;
-            float: right;
-            position: relative;
-            top: 20px;
-            color: black;
-            font-size: 20px;
-        }
-
-        #table-of-contents {
-            /*TODO*/
-            /*I really want to make this, if not all the titles, pop out almost like buttons */
-            background-color: rgb(151, 211, 181);
-            top: 120px;
-            position: relative;
-            border: 2px solid black;
-            padding: 5px;
-            width: 30%;
-            left: 600px;
-            font-size: 18px;
-            text-shadow: 1px 1px black;
-
-        }
-
-        .table-content-words {
-            font-size: 20px;
-            color: rgb(8, 15, 12)
-        }
-
-        .post-header {
-            color: white;
-            z-index: 2;
-            text-shadow: 2px 2px black;
-            text-align: left;
-            top: 260px;
-            position: relative;
-            border: 2px solid black;
-            /* background is z=0, headers and paragraphs are z=1, and titles and float objects are z=2*/
-        }
-
-        .body-paragraph {
-            font-size: 16px;
-            font-family: "Arial";
-            color: rgb(28, 26, 181);
-            line-height: 1.5em;
-            position: relative;
-            top: 200px;
-            text-align: center;
-        }
-
-        .post-dates {
-            text-align: center;
-            background-color: rgb(238, 147, 238);
-            font-size: 15px;
-            font-style: italic;
-            position: relative;
-            top: 210px;
-            border: 2px solid black;
-        }
-
-        a:hover,
-        a:active,
-        a:focus {
-            background-color: blanchedalmond;
-        }
+    * {
+       box-sizing: border-box; 
+    }
+    .grid-container{
+        display:grid;
+        grid-template-areas:
+            'table-of-contents table-of-contents header header header header'
+            'table-of-contents table-of-contents header header header header'
+            'first-title first-title first-title first-title first-title first-title'
+            'first-review first-review first-review first-review first-review first-review'
+            'second-title second-title second-title second-title second-title second-title'
+            'second-review second-review second-review second-review second-review second-review'
+            'third-title third-title third-title third-title third-title third-title'
+            'third-review third-review third-review third-review third-review third-review'
+            'fourth-title fourth-title fourth-title fourth-title fourth-title fourth-title'
+            'fourth-review fourth-review fourth-review fourth-review fourth-review fourth-review'
+            'footer footer footer footer footer footer';
+    }
+    p {
+        text-indent:5%;
+        padding: 1%;
+    }
+    .header{
+        grid-area: header;
+        background-color: #aa4b4b;
+        text-align: center;
+        padding: 20px;
+        font-size:35px;
+    }
+    .table-of-contents{
+        grid-area: table-of-contents;
+        background-color:rgb(88, 114, 105)
+    }
+    .first-title,
+    .second-title,
+    .third-title,
+    .fourth-title{
+        padding:5px;
+        height: 100%;
+        text-align: center;
+        vertical-align:middle;
+        
+    }
+    .first-title{
+        grid-area: first-title;
+        background-color:rgba(252, 172, 74, 0.664);
+    }
+    .second-title{
+        grid-area: second-title;
+        background-color: rgba(252, 172, 74, 0.664);
+    }
+    .third-title{
+        grid-area: third-title;
+        background-color:rgba(252, 172, 74, 0.664);
+    }
+    .fourth-title{
+        grid-area: fourth-title;
+        background-color:rgba(252, 172, 74, 0.664);
+    }
+    .review-one,
+    .review-two,
+    .review-three,
+    .review-four{
+        padding: 10px;
+        height: 300px;
+    }
+    .first-review{
+        grid-area: first-review;
+        background-color: #aaa;
+        color: black;
+    }
+    .second-review{
+        grid-area: second-review;
+        background-color: #bbb;
+        color: black;
+    }
+    .third-review{
+        grid-area: third-review;
+        background-color: #ccc;
+        color: black;
+    }
+    .fourth-review{
+        grid-area: fourth-review;
+        background-color: #aaa;
+        color: black;
+    }
+    .footer{
+        grid-area: footer;
+        background-color: #f1f1f1;
+        padding: 10px;
+        text-align: center;
+        color:#aa4b4b;
+    }
     </style>
-
-    <h1 id="main-title">Tundy's blog-A-tron</h1>
-
-    <h3 id="contents-table-title">Contents_du_table</h3>
-    <ul id="table-of-contents">
-        <li class="table-content-words"><a href="#drawing-animation-review">My review of the JavaScript
-                drawing/animation module</a></li>
-        <li class="table-content-words"><a href="#html-css-review">Thoughts on html and css</a></li>
-        <li class="table-content-words"><a href="#rantings-ravings">Future rantings and ravings</a></li>
-    </ul>
-
-    <h2 class="post-header" id="drawing-animation-review">
-        JavaScript animation/drawing review
-    </h2>
-    <h6 class="post-dates">
-        4/6/22
-    </h6>
-
-    <p class="body-paragraph">
-        I have recently finished the first module of the programming course here on Khan Academy
+    <body>
+        <div class="grid-container">
+        <div class="header">
+            <h2>
+                Tundy's Blog-O-Tron Reborn
+            </h2>
+        </div>
+        <div class="table-of-contents">
+        <ul> 
+            <li><a href="#first-review">
+                Intro to JS drawing/animation</a>
+            </li>
+            <li><a href="#second-review">
+                Intro to HTML/CSS</a>
+            </li>
+            <li><a href="#third-review">
+                SQL querying and managing data</a>
+            </li>
+            <li><a href="#fourth-review">
+                Advanced JS games</a>
+            </li>
+        </ul>
+        </div>
+        <div class="first-title">
+            <h3>
+                Intro to JS drawing/animation
+            </h3>
+        </div>
+        <div class="first-review">
+        <p id="first-review">
+            I have recently finished the first module of the programming course here on Khan Academy
         and would like to jot down some thoughts about it! First off I would say that it was wildly successful! Most of
         the concrete learning for a first time programmer really seemed to happen in the bonus material of each
         challange.Although, many times I found myself stuck the sheer act of sticking with it and figuring things out,
@@ -134,17 +144,16 @@
         set i less than 40. DOES NOT NEED TO BE LESS THAN ARRAY.LENGTH. It was a huge moment for me when I finally
         figured out that I can just make a for loop to push as many random numbers into an array as I needed, for
         example in the make it rain project.
-    </p>
-
-    <h2 class="post-header" id="html-css-review-title">
-        Review of intro to HTML/CSS
-    </h2>
-    <h6 class="post-dates">
-        4/8/22
-    </h6>
-
-    <p class="body-paragraph">
-        The basic layout of the HTML page is very nicely structured. That is
+        </p>
+        </div>
+        <div class="second-title">
+            <h3>
+                Intro to HTML/CSS
+            </h3>
+        </div>
+        <div class="second-review">
+            <p id="second-review">
+                The basic layout of the HTML page is very nicely structured. That is
         the first thing I
         noticed. This structure gives a very intuitive start to using the system. Secondly, the way that CSS feeds into
         it from a simple "style" function and works with a very straight forward heirarchy. Programming in general has
@@ -169,17 +178,67 @@
         the HTML for me with the layout I have designed.(going to be better than this for reals++).It seems that with
         the more I learn so far the more excited I get for the possible things ahead. I really have to try and pace
         myself at this point, the excitment is getting out of hand and I don't want it to lead to burnout.
-    </p>
-
-    <h2 class="post-header" id="querying-and-managing-data">
-        SQL:Querying and managing data
-    </h2>
-
-    <h6 class="post-dates">
-        sometimehere
-    </h6>
-
-
-</body>
-
+            </p>
+        </div>
+        <div class="third-title">
+            <h3>
+                SQL querying and managing data
+            </h3>
+        </div>
+        <div class="third-review">
+            <p id="third-review">
+                OKAY!!!!!!Just finished SQL module. Interesting stuff. I am wondering how many back ends use SQL, once 
+                again the language itself seems very intuative with creation of the tables and the querying of said tables.
+                Joining tables together, with outer and inner joins, left side and right side joins, this all starts to 
+                really make senes after having some practice with the commands and getting comfortable with the idea that 
+                you are literally writing into tables and organizing data in ever more interesting or useful ways! I 
+                started off kind of struggling with this perhaps because it was my jump into a third langauge after only
+                programming for a few months seriously. However, like I mentioned above I was given the chance to use it 
+                over and over and finally towards the end of the module it very much began to flow out of me much more 
+                easily. Once again not giving up and repitition prevails! I have also began to try a new avenue of 
+                memorization of programming concepts and commands. For the last two years, while I have been at work and 
+                as a way to help better develope my memorization skills, after I finish listening to a podcast I try to 
+                do a review of it in my own head immediatly after ends. In particular I go over who was in it, what were 
+                the main themes, what was new information I learned, what was information that I may have changed my mind 
+                about, and things of that nature. I repeat this process for every podcast I listen to, multiple times a 
+                day. This <strong>REALLY</strong> has been helpful for me! So I have decided to apply a similar technique
+                with programming. As on my three work days I really don't get a serious chance to sit down and do some 
+                studying I try to help myself as much as possible while at work. So in my head, when safe to do so, I 
+                review the concepts and commands and their applications repeatedly throughout the day to help better make
+                new synaptic connections in my brain. In other words commit this stuff to memory! I'm sure this will help 
+                as the general approach has already been amazing. BUT ANYWAY back to SQL...fundamentally the idea very much 
+                makes sense to me. Make tables to drive data into them, try to construct the tables so the data can be 
+                comfortably parsed together if need be. Query the tables for desired information, INSERT into them or 
+                DELETE, only when appropriate. Pushing new table rows or columns into an already existing table is preferred
+                to updating the initial table build so the existing data does not get deleted or corrupted. There is an 
+                importance to strictly giving out permissions to read/write into the tables as they may contain sensitive 
+                personal info or <em>damage</em> can be done the the data. Partial permissions can be given, in general 
+                however, access should be limited to back-end engineers. I honestly thought this would be super boring and 
+                maybe at first it was but concept is certainly powerful. I'm not sure where in software, if at all, I will 
+                end up but I want to try and not forget this stuff. If at all practical perhaps since this blog is in itself
+                a way to keep myeslf at least somewhat proficient in HTML/CSS, I wonder if I can run some SQL table along 
+                side this blog...perhaps to push basic data into it from even my own usage or something like that. Just some 
+                sort of reference I can occasionaly get into. Perhaps, trying to keep up with every language I learn along 
+                the way is impractical, it may be. Too soon to tell for sure let us see where this endeavor goes. Also, from
+                here on out I have a new layout built for the blog using GRID structure instead of arbitrary YOLO style. I am
+                going to be sad to see my first version go but at least I won't get a headache looking at it anymore :)
+            </p>
+        </div>
+        <div class="fourth-title">
+            <h3>
+                Advanced JS games
+            </h3>
+        </div>
+        <div class="fourth-review">
+            <p id="fourth-review">
+                fourth review
+            </p>
+        </div>
+        <div class="footer">
+            <h3>
+                The footer of the doomed prophecies
+            </h3>
+        </div>
+        </div>
+    </body>
 </html>
